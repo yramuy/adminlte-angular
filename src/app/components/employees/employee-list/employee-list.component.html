@@ -1,0 +1,46 @@
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Employee List</h3>
+
+        <div class="card-tools">
+          <input type="text" class="form-control form-control-sm" placeholder="Search..." [(ngModel)]="searchText">
+        </div>
+      </div>
+
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let emp of employees">
+              <td>{{emp.id}}</td>
+              <td>{{emp.name}}</td>
+              <td>{{emp.email}}</td>
+              <td>{{emp.phone}}</td>
+              <td>{{emp.position}}</td>
+              <td>
+                <button class="btn btn-sm btn-info" (click)="edit(emp)">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="delete(emp.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</section>

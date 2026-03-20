@@ -1,0 +1,86 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+  <!-- Brand Logo -->
+  <a routerLink="/dashboard" class="brand-link text-center">
+    <span class="brand-text font-weight-bold">My ERP</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <!-- ✅ User Panel -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="https://i.pravatar.cc/40" class="img-circle elevation-2" alt="User">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">Ramu Yerramsetti</a>
+      </div>
+    </div>
+
+    <!-- ✅ Navigation -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column"
+          data-widget="treeview"
+          role="menu"
+          data-accordion="false">
+
+        <!-- Dashboard -->
+        <li class="nav-item">
+          <a routerLink="/dashboard"
+             routerLinkActive="active"
+             class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+
+        <!-- Employees -->
+        <li class="nav-item has-treeview">
+          <a href="#"
+             class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Employees
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a routerLink="/employees/list"
+                 routerLinkActive="active"
+                 class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Employee List</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a routerLink="/employees/add"
+                 routerLinkActive="active"
+                 class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Employee</p>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- Reports -->
+        <li class="nav-item">
+          <a routerLink="/reports"
+             routerLinkActive="active"
+             class="nav-link">
+            <i class="nav-icon fas fa-chart-bar"></i>
+            <p>Reports</p>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</aside>
