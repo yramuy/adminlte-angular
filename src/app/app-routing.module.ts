@@ -5,11 +5,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { LoginComponent } from './components/login/login.component';
+import { loginGuard } from './guards/login.guard';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+  
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, canActivate: [loginGuard] },
+
+  // Main layout (AFTER login)
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },

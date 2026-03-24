@@ -1,35 +1,39 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
   <!-- Brand Logo -->
   <a routerLink="/dashboard" class="brand-link text-center">
-    <span class="brand-text font-weight-bold">My ERP</span>
+    <span class="brand-text font-weight-bold">
+      <img src="assets/images/prospecta_newlogo.png" width="100" class="me-2" />
+    </span>
   </a>
 
   <!-- Sidebar -->
   <div class="sidebar">
-
     <!-- ✅ User Panel -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="https://i.pravatar.cc/40" class="img-circle elevation-2" alt="User">
+        <img
+          src="https://i.pravatar.cc/40"
+          class="img-circle elevation-2"
+          alt="User"
+        />
       </div>
       <div class="info">
-        <a href="#" class="d-block">Ramu Yerramsetti</a>
+        <a href="#" class="d-block">{{ user?.fullName }}</a>
+        <span class="text-white">{{ user?.roleName }}</span>
       </div>
     </div>
 
     <!-- ✅ Navigation -->
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column"
-          data-widget="treeview"
-          role="menu"
-          data-accordion="false">
-
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
         <!-- Dashboard -->
         <li class="nav-item">
-          <a routerLink="/dashboard"
-             routerLinkActive="active"
-             class="nav-link">
+          <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>Dashboard</p>
           </a>
@@ -37,8 +41,7 @@
 
         <!-- Employees -->
         <li class="nav-item has-treeview">
-          <a href="#"
-             class="nav-link">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Employees
@@ -47,40 +50,128 @@
           </a>
 
           <ul class="nav nav-treeview">
-
             <li class="nav-item">
-              <a routerLink="/employees/list"
-                 routerLinkActive="active"
-                 class="nav-link">
+              <a
+                routerLink="/employees/list"
+                routerLinkActive="active"
+                class="nav-link"
+              >
                 <i class="far fa-circle nav-icon"></i>
                 <p>Employee List</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a routerLink="/employees/add"
-                 routerLinkActive="active"
-                 class="nav-link">
+              <a
+                routerLink="/employees/add"
+                routerLinkActive="active"
+                class="nav-link"
+              >
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add Employee</p>
               </a>
             </li>
-
           </ul>
         </li>
 
         <!-- Reports -->
-        <li class="nav-item">
-          <a routerLink="/reports"
-             routerLinkActive="active"
-             class="nav-link">
+        <!-- Reports Main Menu -->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-bar"></i>
-            <p>Reports</p>
+            <p>
+              Reports
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
-        </li>
 
+          <!-- Level 1 -->
+          <ul class="nav nav-treeview">
+            <!-- Daily -->
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Daily Attendance
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+
+              <!-- Level 2 -->
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a
+                    routerLink="/reports/daily-attendance"
+                    routerLinkActive="active"
+                    class="nav-link"
+                  >
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Attendance</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    routerLink="/reports/daily-summary"
+                    routerLinkActive="active"
+                    class="nav-link"
+                  >
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Summary</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    routerLink="/reports/daily-absentees"
+                    routerLinkActive="active"
+                    class="nav-link"
+                  >
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Absentees</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Monthly -->
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Monthly Attendance
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+
+              <!-- Level 2 -->
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a
+                    routerLink="/reports/monthly-attendance"
+                    routerLinkActive="active"
+                    class="nav-link"
+                  >
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Attendance</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    routerLink="/reports/monthly-summary"
+                    routerLinkActive="active"
+                    class="nav-link"
+                  >
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Summary</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
-
   </div>
 </aside>

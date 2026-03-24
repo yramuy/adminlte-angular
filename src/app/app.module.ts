@@ -11,6 +11,8 @@ import { EmployeeListComponent } from './components/employees/employee-list/empl
 import { FormsModule } from '@angular/forms';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { ReportsComponent } from './components/reports/reports.component';
     DashboardComponent,
     EmployeeListComponent,
     EmployeeAddComponent,
-    ReportsComponent
+    ReportsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

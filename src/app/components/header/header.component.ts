@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 declare var $: any;
 
 @Component({
@@ -8,13 +9,15 @@ declare var $: any;
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngAfterViewInit() {
     $('[data-widget="pushmenu"]').PushMenu();
   }
 
   logout() {
+
+    this.authService.setLoginStatus(false);
     // clear session/local storage
     localStorage.clear();
 
